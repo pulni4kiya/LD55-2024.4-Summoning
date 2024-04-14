@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
+	private static Collider2D[] collidersCheck = new Collider2D[1];
+
 	[SerializeField] private float speed;
 	[SerializeField] private InputActionReference moveAction;
 	[SerializeField] private InputActionReference summonAction;
@@ -12,9 +14,13 @@ public class Player : MonoBehaviour {
 
 	public Mob MobToSummon { get; set; }
 
+	private MobGroup mobGroup;
+
 	private Vector2 moveDir;
 
+
 	private void Start() {
+		this.mobGroup = new MobGroup();
 		this.moveAction.action.actionMap.Enable();
 	}
 
@@ -25,7 +31,9 @@ public class Player : MonoBehaviour {
 			var mousePos = (Vector3)Mouse.current.position.value;
 			mousePos.z = 10f;
 			var worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-			if (Physics2D.OverlapPoint(worldPos) == null) {
+			var filter = new ContactFilter2D();
+			filter.useTriggers = false;
+			if (Physics2D.OverlapPoint(worldPos, filter, collidersCheck) ==  0) {
 				this.SpawnMob(worldPos);
 			}
 		}
@@ -36,6 +44,8 @@ public class Player : MonoBehaviour {
 	}
 
 	private void SpawnMob(Vector3 worldPos) {
-		GameObject.Instantiate(this.MobToSummon, worldPos, Quaternion.identity);
+		var mob = GameObject.Instantiate(this.MobToSummon, worldPos, Quaternion.identity);
+		mob.MobGroup = this.mobGroup;
+		this.mobGroup.AllMobs.Add(mob);
 	}
 }
