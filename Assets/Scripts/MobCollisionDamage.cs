@@ -34,7 +34,7 @@ public class MobCollisionDamage : MonoBehaviour {
 
 	private void Attack(Mob mob) {
 		mob.CurrentHealth -= this.damagePerSecond / this.attacksPerSecond;
-		if (mob.CurrentHealth < 0f) {
+		if (mob.CurrentHealth < 0f && mob.gameObject != GameManager.Instance.player.gameObject) {
 			GameObject.Destroy(mob.gameObject);
 		}
 	}

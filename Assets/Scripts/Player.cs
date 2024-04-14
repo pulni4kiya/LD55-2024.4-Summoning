@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
 	private static Collider2D[] collidersCheck = new Collider2D[1];
 
 	[SerializeField] private float speed;
-	[SerializeField] private float maxHealth;
 	[SerializeField] private float healthRegen;
 	[SerializeField] private Image healthBar;
 	[SerializeField] private float maxMana;
@@ -18,6 +17,7 @@ public class Player : MonoBehaviour {
 	[SerializeField] private InputActionReference moveAction;
 	[SerializeField] private InputActionReference summonAction;
 	[SerializeField] private Rigidbody2D rigidbody;
+	[SerializeField] private Mob playerAsMob;
 
 	public Mob MobToSummon { get; set; }
 
@@ -25,15 +25,16 @@ public class Player : MonoBehaviour {
 
 	private Vector2 moveDir;
 
-	private float health;
 	private float mana;
 
+	private bool hasDied;
 
 	private void Start() {
 		this.mobGroup = new MobGroup();
 		this.moveAction.action.actionMap.Enable();
-		this.health = this.maxHealth;
 		this.mana = this.maxMana;
+		this.mobGroup.AllMobs.Add(this.playerAsMob);
+		this.playerAsMob.MobGroup = this.mobGroup;
 	}
 
 	private void Update() {
@@ -60,8 +61,13 @@ public class Player : MonoBehaviour {
 	}
 
 	private void UpdateHealth() {
-		this.health = Mathf.Clamp(this.health + this.healthRegen * Time.deltaTime, 0, this.maxHealth);
-		this.healthBar.fillAmount = this.health / this.maxHealth;
+		//this.health = Mathf.Clamp(this.health + this.healthRegen * Time.deltaTime, 0, this.maxHealth);
+		this.healthBar.fillAmount = this.playerAsMob.CurrentHealth / this.playerAsMob.Stats.StartingHealth;
+
+		if (!this.hasDied && this.playerAsMob.CurrentHealth <= 0f) {
+			this.hasDied = true;
+			Debug.Log("YOU DIEDED!");
+		}
 	}
 
 	private void UpdateMana() {

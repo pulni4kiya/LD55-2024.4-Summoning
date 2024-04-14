@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959803703217238534}
   - component: {fileID: 5819079763377665958}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 182524056048839439}
   - component: {fileID: 7480528563929973335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8753902438240407109}
   - component: {fileID: 2790864642156529361}
   - component: {fileID: 7082677113909514149}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,6 +254,73 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &4654979439729457084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49924918671230232}
+  - component: {fileID: 8951164527049919322}
+  m_Layer: 10
+  m_Name: Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49924918671230232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654979439729457084}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3201435247937025857}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8951164527049919322
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654979439729457084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 5175
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &5061452110625813368
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +332,7 @@ GameObject:
   - component: {fileID: 772337953673470738}
   - component: {fileID: 8523548250197380923}
   - component: {fileID: 8917846846237587692}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +467,8 @@ GameObject:
   - component: {fileID: 3201435247937025857}
   - component: {fileID: 3951330992635115115}
   - component: {fileID: 1830693195029974099}
-  m_Layer: 0
+  - component: {fileID: 4890015703721483890}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,9 +491,10 @@ Transform:
   - {fileID: 2064986687293784809}
   - {fileID: 182524056048839439}
   - {fileID: 1959803703217238534}
+  - {fileID: 49924918671230232}
   - {fileID: 2180491577138860076}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3951330992635115115
 MonoBehaviour:
@@ -440,9 +509,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  healthRegen: 5
+  healthBar: {fileID: 0}
+  maxMana: 100
+  manaRegen: 10
+  manaBar: {fileID: 0}
   moveAction: {fileID: -5977554360437566864, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
   summonAction: {fileID: 9030981239578872051, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
   rigidbody: {fileID: 1830693195029974099}
+  playerAsMob: {fileID: 4890015703721483890}
 --- !u!50 &1830693195029974099
 Rigidbody2D:
   serializedVersion: 4
@@ -470,6 +545,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &4890015703721483890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811634185200707285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976358e25a6e0cd4a8d70a46ab3f519e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Player
+  stats:
+    StartingHealth: 200
+    Speed: 5
+    DetectionRange: 5
+    ManaCost: 0
+    Lifetime: 0
+  rigidbody: {fileID: 1830693195029974099}
+  detectionCollider: {fileID: 8951164527049919322}
 --- !u!1 &8585253029175357445
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +578,7 @@ GameObject:
   - component: {fileID: 5370962651823732895}
   - component: {fileID: 1434551615161629720}
   - component: {fileID: 7553520466547994717}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -539,7 +635,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -617,7 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064986687293784809}
   - component: {fileID: 9128746114760710669}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
