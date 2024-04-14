@@ -182,7 +182,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: 15
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: mob
       value: 
       objectReference: {fileID: 7351979691565385538, guid: 74cd4817837665e4a95b05a518d98fed, type: 3}
+    - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: switchAction
+      value: 
+      objectReference: {fileID: 8680553029995617599, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka3
@@ -308,6 +312,54 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8837774236999124142, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
   m_PrefabInstance: {fileID: 118990027}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &143085153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 143085155}
+  - component: {fileID: 143085154}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &143085154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143085153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e900bd7864f65924fa289a4f534cb3ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Spawns>k__BackingField:
+  - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
+    Amount: 500
+    Radius: 10
+--- !u!4 &143085155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143085153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.09, y: 8.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
@@ -470,6 +522,10 @@ PrefabInstance:
       propertyPath: mob
       value: 
       objectReference: {fileID: 7351979691565385538, guid: d2a106f3ae03e1043a3d08154357530e, type: 3}
+    - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: switchAction
+      value: 
+      objectReference: {fileID: -5306142011030920654, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka2
@@ -680,12 +736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -956,6 +1012,10 @@ PrefabInstance:
       propertyPath: mob
       value: 
       objectReference: {fileID: 7351979691565385538, guid: 4a1e921ddc1e78048a70d406ae972e94, type: 3}
+    - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: switchAction
+      value: 
+      objectReference: {fileID: -4654501821906830971, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka1

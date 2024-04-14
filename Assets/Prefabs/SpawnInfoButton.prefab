@@ -284,7 +284,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mob: {fileID: 0}
   button: {fileID: 3934920845034218222}
+  buttonBackground: {fileID: 7812441796287593390}
   mobName: {fileID: 562272634402417240}
+  switchAction: {fileID: 0}
 --- !u!1 &7338378247292899083
 GameObject:
   m_ObjectHideFlags: 0
