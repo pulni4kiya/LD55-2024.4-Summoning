@@ -56,6 +56,7 @@ MonoBehaviour:
     Speed: 5
     DetectionRange: 5
     ManaCost: 10
+    Lifetime: 10
   rigidbody: {fileID: 7620932935037794291}
   detectionCollider: {fileID: 6651423914940954737}
 --- !u!50 &7620932935037794291

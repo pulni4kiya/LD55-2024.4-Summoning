@@ -20,6 +20,10 @@ public class Mob : MonoBehaviour {
 	private void Start() {
 		this.CurrentHealth = this.stats.StartingHealth;
 		this.detectionCollider.radius = this.stats.DetectionRange;
+
+		if (this.stats.Lifetime > 0f) {
+			GameObject.Destroy(this.gameObject, this.stats.Lifetime);
+		}
 	}
 
 	private void Update() {
@@ -41,5 +45,6 @@ public class Mob : MonoBehaviour {
 		public float Speed;
 		public float DetectionRange;
 		public float ManaCost;
+		public float Lifetime;
 	}
 }
