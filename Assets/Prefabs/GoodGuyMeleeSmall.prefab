@@ -55,6 +55,7 @@ MonoBehaviour:
     StartingHealth: 5
     Speed: 7
     DetectionRange: 5
+    ManaCost: 5
   rigidbody: {fileID: 7620932935037794291}
   detectionCollider: {fileID: 6651423914940954737}
 --- !u!50 &7620932935037794291

@@ -40,5 +40,6 @@ public class Mob : MonoBehaviour {
 		public float StartingHealth;
 		public float Speed;
 		public float DetectionRange;
+		public float ManaCost;
 	}
 }
