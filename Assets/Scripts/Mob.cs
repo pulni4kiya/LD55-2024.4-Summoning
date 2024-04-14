@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mob : MonoBehaviour {
-	public const int FriendlyLayer = 10;
-	public const int EnemyLayer = 11;
-
 	public string DisplayName;
 	[SerializeField] private MobStats stats;
 	[SerializeField] private Rigidbody2D rigidbody;

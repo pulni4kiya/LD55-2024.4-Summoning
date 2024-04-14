@@ -31,3 +31,9 @@ public class GameManager : MonoBehaviour
 		}
 	}
 }
+
+public static class Const {
+	public const int FriendlyLayer = 10;
+	public const int EnemyLayer = 11;
+	public const int ObstacleLayer = 12;
+}
