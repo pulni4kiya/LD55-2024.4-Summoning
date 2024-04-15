@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimplePlayerMobBrain : MonoBehaviour {
+public class RangedPlayerMobBrain : MonoBehaviour {
 	[SerializeField] private Mob mob;
+	[SerializeField] private MobRangedDamage rangedDamage;
 	[SerializeField] private float thinkCooldown;
 	[SerializeField] private AnimationCurve followChance;
 	[SerializeField] private float minDistance;
@@ -18,13 +19,17 @@ public class SimplePlayerMobBrain : MonoBehaviour {
 	}
 
 	private void Update() {
+		var range = this.rangedDamage.Range;
+		var unsafeRangeSqr = (range - 1f) * (range - 1f);
+
 		this.cooldown -= Time.deltaTime;
 		if (this.cooldown > 0f) return;
 		this.cooldown += this.thinkCooldown;
 
 		var closestDistance = float.PositiveInfinity;
 		var closestDirection = Vector2.zero;
-		//Mob closestTarget = null;
+		var runAwayDirection = Vector2.zero;
+		this.rangedDamage.Target = null;
 		foreach (var target in mob.MobGroup.Targets) {
 			if (target == null) continue;
 
@@ -32,9 +37,22 @@ public class SimplePlayerMobBrain : MonoBehaviour {
 			var distance = direction.sqrMagnitude;
 			if (distance < closestDistance) {
 				closestDistance = distance;
-				//closestTarget = target;
 				closestDirection = direction;
+				if (distance < range * range) {
+					this.rangedDamage.Target = target;
+				}
 			}
+
+			if (distance < unsafeRangeSqr) {
+				runAwayDirection -= direction * 0.5f;
+			}
+		}
+
+		runAwayDirection = Vector2.ClampMagnitude(runAwayDirection, this.mob.Stats.Speed);
+		if (runAwayDirection != Vector2.zero) {
+			closestDirection = runAwayDirection;
+		} else if (closestDistance < range * range) {
+			closestDirection = Vector2.zero;
 		}
 
 		if (this.mob.IsFriendly) {

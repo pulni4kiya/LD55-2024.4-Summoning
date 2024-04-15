@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1428761024968806829}
   - component: {fileID: 7109508017541159103}
   - component: {fileID: 3536729268156532379}
-  - component: {fileID: 3327959954914618927}
+  - component: {fileID: 648164196892084405}
   - component: {fileID: 4988545702783271141}
   m_Layer: 11
   m_Name: BadGuyTiny
@@ -55,6 +55,8 @@ MonoBehaviour:
     StartingHealth: 5
     Speed: 7
     DetectionRange: 5
+    ManaCost: 0
+    Lifetime: 0
   rigidbody: {fileID: 3536729268156532379}
   detectionCollider: {fileID: 2149845789951746386}
 --- !u!50 &3536729268156532379
@@ -84,7 +86,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3327959954914618927
+--- !u!114 &648164196892084405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,11 +95,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 627479584951933513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850387b767c7a1344b4510d146e3b9ef, type: 3}
+  m_Script: {fileID: 11500000, guid: bc950fb4c254f2849820850002a3f804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mob: {fileID: 7109508017541159103}
   thinkCooldown: 0.3
+  followChance:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minDistance: 0
+  maxDistance: 0
 --- !u!114 &4988545702783271141
 MonoBehaviour:
   m_ObjectHideFlags: 0

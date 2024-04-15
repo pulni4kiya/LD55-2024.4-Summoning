@@ -1551,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: mob
       value: 
-      objectReference: {fileID: 7351979691565385538, guid: 4a1e921ddc1e78048a70d406ae972e94, type: 3}
+      objectReference: {fileID: 7351979691565385538, guid: 7f315302d2f60dd41958e2996e3f1abf, type: 3}
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: switchAction
       value: 
