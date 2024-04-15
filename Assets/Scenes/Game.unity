@@ -1480,35 +1480,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e80c6870e40c154d83e03e2f5208f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 40, y: 40}
-  cellSize: 2
-  fillRate: 0.5
-  noiseScale: 0.1
+  cellSize: 1
+  mapSize: 20
   obstaclePrefab: {fileID: 5739640232801531467, guid: 4bdf40393c72e0a49b18ccf89bcc223d, type: 3}
-  extraPoints: 3
+  sizeMinMax: {x: 5, y: 15}
+  count: 20
+  distanceMinMax: {x: 3, y: 8}
+  corridorWidth: 2
   spawnerSets:
   - Spawns:
     - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
-      Amount: 10
-      Radius: 3
+      Amount: 7
+      Radius: 2
     - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
-      Amount: 30
-      Radius: 6
+      Amount: 15
+      Radius: 3
   - Spawns:
     - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
       Amount: 20
-      Radius: 3
+      Radius: 2
   bossSpawnSet:
     Spawns:
     - Prefab: {fileID: 7109508017541159103, guid: 90218d5e282d3c84a99ccba6f61d11b8, type: 3}
       Amount: 1
       Radius: 0.5
     - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
-      Amount: 10
-      Radius: 3
+      Amount: 5
+      Radius: 2
     - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
-      Amount: 30
-      Radius: 6
+      Amount: 15
+      Radius: 3
 --- !u!4 &747402754
 Transform:
   m_ObjectHideFlags: 0
@@ -2185,6 +2186,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 673072814}
   healthBar: {fileID: 362880877}
+  boosters:
+  - {fileID: 7445460360641489957, guid: 8f2f484449fa2cb449c2b4698898d244, type: 3}
+  - {fileID: 7445460360641489957, guid: 861c238e4ee60d14fa706bfb64e6c043, type: 3}
+  - {fileID: 7445460360641489957, guid: ebea38dfc7f9456458a4504c9b7000fa, type: 3}
   player: {fileID: 1147643006}
 --- !u!4 &1246208914
 Transform:

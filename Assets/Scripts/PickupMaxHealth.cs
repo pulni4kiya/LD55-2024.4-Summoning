@@ -8,12 +8,13 @@ public class PickupMaxHealth : MonoBehaviour
 
     private void Awake()
     {
-        player = FindObjectOfType<Player>();
+		player = GameManager.Instance.player;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
-        //player.stats.StartingHealth += MaxHealthUpdate;
-    }
+        player.GetComponent<Mob>().Stats.StartingHealth += MaxHealthUpdate;
+		player.GetComponent<Mob>().CurrentHealth += MaxHealthUpdate;
+	}
 }

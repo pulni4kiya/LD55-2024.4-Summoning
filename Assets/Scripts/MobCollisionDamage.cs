@@ -58,7 +58,7 @@ public class MobCollisionDamage : MonoBehaviour {
 
 		mob.CurrentHealth -= damage;
 		if (mob.CurrentHealth <= 0f && !isPlayer) {
-			GameObject.Destroy(mob.gameObject);
+			GameManager.Instance.OnMobKilled(mob);
 		}
 	}
 

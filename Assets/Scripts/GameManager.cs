@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private MobGroup mobGroupPrefab;
 	[SerializeField] private MenuController menu;
 	[SerializeField] private Image healthBar;
+	[SerializeField] private List<GameObject> boosters;
 
 	public Player player;
 
@@ -65,6 +67,13 @@ public class GameManager : MonoBehaviour
 
 	public void NewGame() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	public void OnMobKilled(Mob mob) {
+		GameObject.Destroy(mob.gameObject);
+		if (!mob.IsFriendly && mob.MobGroup.AllMobs.Where(m => m != null && m != mob).Count() == 0) {
+			GameObject.Instantiate(this.boosters[UnityEngine.Random.Range(0, this.boosters.Count)], mob.transform.position, Quaternion.identity);
+		}
 	}
 
 	public enum State {
