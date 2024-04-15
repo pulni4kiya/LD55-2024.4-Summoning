@@ -8,6 +8,8 @@ public class Mob : MonoBehaviour {
 	[SerializeField] private MobStats stats;
 	[SerializeField] private Rigidbody2D rigidbody;
 	[SerializeField] private CircleCollider2D detectionCollider;
+	[SerializeField] private Transform visualRoot;
+	[SerializeField] private Animator animator;
 
 	public MobGroup MobGroup { get; set; }
 
@@ -27,7 +29,15 @@ public class Mob : MonoBehaviour {
 	}
 
 	private void Update() {
+		if (this.visualRoot != null) {
+			if (this.Rigidbody.velocity.x != 0f) {
+				this.visualRoot.localScale = new Vector3(-Mathf.Sign(this.Rigidbody.velocity.x), 1f, 1f);
+			}
+		}
 
+		if (this.animator != null) {
+			this.animator.SetBool("IsMoving", this.Rigidbody.velocity != Vector2.zero);
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider) {

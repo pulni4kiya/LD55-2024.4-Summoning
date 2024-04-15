@@ -201,11 +201,27 @@ PrefabInstance:
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: mob
       value: 
-      objectReference: {fileID: 7351979691565385538, guid: 74cd4817837665e4a95b05a518d98fed, type: 3}
+      objectReference: {fileID: 7351979691565385538, guid: d2a106f3ae03e1043a3d08154357530e, type: 3}
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: switchAction
       value: 
       objectReference: {fileID: 8680553029995617599, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b61e4032266cb984eb027b24ee0123e4, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka3
@@ -1480,7 +1496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e80c6870e40c154d83e03e2f5208f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellSize: 1
+  cellSize: 1.5
   mapSize: 20
   obstaclePrefab: {fileID: 5739640232801531467, guid: 4bdf40393c72e0a49b18ccf89bcc223d, type: 3}
   sizeMinMax: {x: 5, y: 15}
@@ -1747,11 +1763,27 @@ PrefabInstance:
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: mob
       value: 
-      objectReference: {fileID: 7351979691565385538, guid: d2a106f3ae03e1043a3d08154357530e, type: 3}
+      objectReference: {fileID: 7351979691565385538, guid: 7f315302d2f60dd41958e2996e3f1abf, type: 3}
     - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: switchAction
       value: 
       objectReference: {fileID: -5306142011030920654, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 229400932cac79446ac20647e25d520c, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka2
@@ -3338,6 +3370,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 78443982}
     m_Modifications:
+    - target: {fileID: 2399272286877961473, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: mob
+      value: 
+      objectReference: {fileID: 7351979691565385538, guid: 74cd4817837665e4a95b05a518d98fed, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6e2107d595686047bb05e2d5ded765b, type: 3}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2626358502236436028, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6161776457527619334, guid: 4ff71510f286204418f3e559eaca83ff, type: 3}
       propertyPath: m_Name
       value: ButtonMobka1
