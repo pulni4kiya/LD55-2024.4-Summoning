@@ -559,7 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Player
   stats:
-    StartingHealth: 200
+    StartingHealth: 100
     Speed: 5
     DetectionRange: 5
     ManaCost: 0

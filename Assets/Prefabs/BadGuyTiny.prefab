@@ -123,6 +123,8 @@ MonoBehaviour:
   damagePerSecond: 7
   attacksPerSecond: 2
   attackAll: 0
+  attackPlayerOnHit: 0
+  playerDamageMp: 1
 --- !u!1 &2323669633249817662
 GameObject:
   m_ObjectHideFlags: 0

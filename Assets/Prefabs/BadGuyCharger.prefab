@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1428761024968806829}
   - component: {fileID: 7109508017541159103}
   - component: {fileID: 3536729268156532379}
-  - component: {fileID: -1808434512063474191}
   - component: {fileID: 4988545702783271141}
+  - component: {fileID: -4257185407470435135}
   m_Layer: 11
-  m_Name: BadGuy
+  m_Name: BadGuyCharger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,8 +52,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   stats:
-    StartingHealth: 10
-    Speed: 5
+    StartingHealth: 1000
+    Speed: 3
     DetectionRange: 5
     ManaCost: 0
     Lifetime: 0
@@ -71,7 +71,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 150
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -86,28 +86,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-1808434512063474191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627479584951933513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc950fb4c254f2849820850002a3f804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mob: {fileID: 7109508017541159103}
-  thinkCooldown: 0.3
-  followChance:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  minDistance: 0
-  maxDistance: 0
 --- !u!114 &4988545702783271141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +98,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b47b9fdc38ae1043a04f545ce9c1dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerSecond: 10
-  attacksPerSecond: 2
+  damagePerSecond: 50
+  attacksPerSecond: 5
   attackAll: 0
-  attackPlayerOnHit: 0
-  playerDamageMp: 1
+  attackPlayerOnHit: 1
+  playerDamageMp: 5
+--- !u!114 &-4257185407470435135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627479584951933513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c56d7f5b3f104e458e4f3eb4041ea21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mob: {fileID: 7109508017541159103}
+  chargeTimePower: 0.5
+  chargeSpeedMp: 4.5
+  chargeUpTime: {x: 0.1, y: 0.1}
+  waitTime: {x: 0.5, y: 0.5}
+  walkTime: {x: 1, y: 4}
+  chargeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.5148736
+      outSlope: 1.5148736
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.46353617
+      value: 0.70219874
+      inSlope: 1.1065269
+      outSlope: 1.1065269
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09118158
+      outWeight: 0.20211798
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.23958623
+      outSlope: 0.23958623
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1966147
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  overshootPercent: 0.5
 --- !u!1 &2323669633249817662
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 2323669633249817662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1428761024968806829}
@@ -275,7 +305,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.75
 --- !u!1 &4504377433622271254
 GameObject:
   m_ObjectHideFlags: 0
