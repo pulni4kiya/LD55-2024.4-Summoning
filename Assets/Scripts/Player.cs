@@ -11,8 +11,8 @@ public class Player : MonoBehaviour {
 	[SerializeField] private float speed;
 	[SerializeField] private float healthRegen;
 	[SerializeField] private Image healthBar;
-	[SerializeField] private float maxMana;
-	[SerializeField] private float manaRegen;
+	[SerializeField] public float maxMana;
+	[SerializeField] public float manaRegen;
 	[SerializeField] private Image manaBar;
 	[SerializeField] private InputActionReference moveAction;
 	[SerializeField] private InputActionReference summonAction;
