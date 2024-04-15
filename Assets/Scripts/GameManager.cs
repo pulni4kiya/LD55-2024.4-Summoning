@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
 		}
 
 		this.healthBar.transform.parent.gameObject.SetActive(this.ActiveCharger != null);
+
+		if (Time.timeSinceLevelLoad > 1f && GameObject.FindObjectOfType<ObjectiveMarker>() == null) {
+			this.GameWon();
+		}
 	}
 
 	public void Pause() {

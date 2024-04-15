@@ -458,12 +458,12 @@ GameObject:
   - component: {fileID: 143085155}
   - component: {fileID: 143085154}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &143085154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,12 +1009,12 @@ GameObject:
   - component: {fileID: 521279265}
   - component: {fileID: 521279264}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Spawnder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &521279264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -775.83, y: -490}
+  m_AnchoredPosition: {x: -600, y: -490}
   m_SizeDelta: {x: 425.65002, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &747402752
@@ -1467,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &747402753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e80c6870e40c154d83e03e2f5208f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 50, y: 50}
+  mapSize: {x: 40, y: 40}
   cellSize: 2
   fillRate: 0.5
   noiseScale: 0.1
@@ -1498,6 +1498,17 @@ MonoBehaviour:
     - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
       Amount: 20
       Radius: 3
+  bossSpawnSet:
+    Spawns:
+    - Prefab: {fileID: 7109508017541159103, guid: 90218d5e282d3c84a99ccba6f61d11b8, type: 3}
+      Amount: 1
+      Radius: 0.5
+    - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
+      Amount: 10
+      Radius: 3
+    - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
+      Amount: 30
+      Radius: 6
 --- !u!4 &747402754
 Transform:
   m_ObjectHideFlags: 0
@@ -3242,7 +3253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 775.83, y: -490}
+  m_AnchoredPosition: {x: 600, y: -490}
   m_SizeDelta: {x: 425.65002, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &5232399217439138907

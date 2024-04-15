@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3536729268156532379}
   - component: {fileID: 4988545702783271141}
   - component: {fileID: -4257185407470435135}
+  - component: {fileID: -3734818461304870967}
   m_Layer: 11
   m_Name: BadGuyCharger
   m_TagString: Untagged
@@ -155,6 +156,18 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   overshootPercent: 0.5
+--- !u!114 &-3734818461304870967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627479584951933513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00eeb518c00bb94d8d6ec282b6cfc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2323669633249817662
 GameObject:
   m_ObjectHideFlags: 0

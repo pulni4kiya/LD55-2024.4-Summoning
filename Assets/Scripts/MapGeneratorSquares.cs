@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,7 @@ public class MapGeneratorSquares : MonoBehaviour {
 	[SerializeField] private int extraPoints;
 
 	[SerializeField] private List<MobSpanwerSet> spawnerSets;
+	[SerializeField] private MobSpanwerSet bossSpawnSet;
 
 	private Vector2 noiseOffset;
 
@@ -46,11 +48,11 @@ public class MapGeneratorSquares : MonoBehaviour {
 		}
 
 		var points = new List<Vector2>();
-		points.Add(new Vector2(0.05f, 0.05f));
+		points.Add(new Vector2(0.1f, 0.1f));
 		for (int i = 0; i < this.extraPoints; i++) {
-			points.Add(new Vector2(UnityEngine.Random.Range(0.1f, 0.9f), UnityEngine.Random.Range(0.1f, 0.9f)));
+			points.Add(new Vector2(UnityEngine.Random.Range(0.2f, 0.8f), UnityEngine.Random.Range(0.2f, 0.8f)));
 		}
-		points.Add(new Vector2(0.95f, 0.95f));
+		points.Add(new Vector2(0.9f, 0.9f));
 
 		for (int i = 0; i < points.Count; i++) {
 			points[i] = Vector2.Scale((points[i] - Vector2.one * 0.5f), this.mapSize) * this.cellSize;
@@ -64,14 +66,23 @@ public class MapGeneratorSquares : MonoBehaviour {
 				GameObject.Destroy(hit.collider.transform.parent.gameObject);
 			}
 
-			var go = new GameObject();
-			go.transform.position = p2;
-			var spawner = go.AddComponent<MobSpawner>();
-			var randomIndex = UnityEngine.Random.Range(0, this.spawnerSets.Count);
-			spawner.Spawns = this.spawnerSets[randomIndex].Spawns;
+			if (i != points.Count - 1) {
+				var randomIndex = UnityEngine.Random.Range(0, this.spawnerSets.Count);
+				AddSpawner(p2, this.spawnerSets[randomIndex]);
+			}
 		}
 
+		AddSpawner(points.Last(), this.bossSpawnSet);
+		//AddSpawner(points[1], this.bossSpawnSet);
+
 		GameManager.Instance.player.transform.position = points[0];
+	}
+
+	private void AddSpawner(Vector3 position, MobSpanwerSet spawnSet) {
+		var go = new GameObject();
+		go.transform.position = position;
+		var spawner = go.AddComponent<MobSpawner>();
+		spawner.Spawns = spawnSet.Spawns;
 	}
 
 	[Serializable]
