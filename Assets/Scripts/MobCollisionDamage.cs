@@ -8,6 +8,9 @@ public class MobCollisionDamage : MonoBehaviour {
 	[SerializeField] private float attacksPerSecond;
 	[SerializeField] private bool attackAll;
 
+	public bool AttackAll => this.attackAll;
+	public float DamagePerSecond => this.damagePerSecond;
+
 	private List<Mob> enemies = new();
 	private float cooldown = 0f;
 
@@ -33,6 +36,8 @@ public class MobCollisionDamage : MonoBehaviour {
 	}
 
 	private void Attack(Mob mob) {
+		if (mob == null) return;
+
 		mob.CurrentHealth -= this.damagePerSecond / this.attacksPerSecond;
 		if (mob.CurrentHealth < 0f && mob.gameObject != GameManager.Instance.player.gameObject) {
 			GameObject.Destroy(mob.gameObject);

@@ -14,6 +14,10 @@ public class MobSpawner : MonoBehaviour {
 		foreach (var spawn in this.Spawns) {
 			for (int i = 0; i < spawn.Amount; i++) {
 				var position = this.transform.position + (Vector3)UnityEngine.Random.insideUnitCircle * spawn.Radius;
+				if (Physics2D.OverlapPoint(position, 1 << Const.ObstacleLayer) != null) {
+					i--;
+					continue;
+				}
 				var mob = GameObject.Instantiate(spawn.Prefab, position, Quaternion.identity, this.transform);
 				mob.MobGroup = mobGroup;
 				mobsList.Add(mob);

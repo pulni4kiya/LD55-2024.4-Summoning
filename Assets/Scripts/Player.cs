@@ -67,6 +67,7 @@ public class Player : MonoBehaviour {
 		if (!this.hasDied && this.playerAsMob.CurrentHealth <= 0f) {
 			this.hasDied = true;
 			Debug.Log("YOU DIEDED!");
+			GameManager.Instance.GameLost();
 		}
 	}
 

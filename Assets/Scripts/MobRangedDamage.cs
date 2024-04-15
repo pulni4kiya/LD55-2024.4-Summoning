@@ -10,6 +10,7 @@ public class MobRangedDamage : MonoBehaviour {
 	private float cooldown = 0f;
 
 	public float Range => this.range;
+	public float DamagePerSecond => this.damagePerSecond;
 
 	public Mob Target { get; set; }
 

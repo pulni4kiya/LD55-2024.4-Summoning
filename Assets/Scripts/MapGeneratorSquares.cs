@@ -9,14 +9,17 @@ public class MapGeneratorSquares : MonoBehaviour {
 	[SerializeField] private float cellSize;
 	[SerializeField] private float fillRate;
 	[SerializeField] private float noiseScale;
-	[SerializeField] private float noiseOffset;
+	//[SerializeField] private float noiseOffset;
 	[SerializeField] private GameObject obstaclePrefab;
 	[SerializeField] private int extraPoints;
 
 	[SerializeField] private List<MobSpanwerSet> spawnerSets;
 
+	private Vector2 noiseOffset;
+
 	private void Start() {
 		this.GenerateMap();
+		this.noiseOffset = UnityEngine.Random.insideUnitCircle * 50f;
 	}
 
 	private void Update() {
@@ -32,8 +35,9 @@ public class MapGeneratorSquares : MonoBehaviour {
 
 		for (int i=0; i < this.mapSize.x; i++) {
 			for (int j = 0; j < this.mapSize.y; j++) {
-				var noisevalue = Mathf.PerlinNoise((i + this.noiseOffset) * this.noiseScale, (j + this.noiseOffset) * this.noiseScale);
-				if (noisevalue < this.fillRate) {
+				var noisePos = (new Vector2(i, j) + this.noiseOffset) * this.noiseScale;
+				var noisevalue = Mathf.PerlinNoise(noisePos.x, noisePos.y);
+				if (noisevalue < this.fillRate || i == 0 || i == this.mapSize.x - 1 || j == 0 || j == this.mapSize.y - 1) {
 					var position = this.transform.position + new Vector3(this.mapSize.x / 2f - i, this.mapSize.y / 2f - j, 0f) * this.cellSize;
 					var obstacle = GameObject.Instantiate(this.obstaclePrefab, position, Quaternion.identity, this.transform);
 					obstacle.transform.localScale = Vector3.one * this.cellSize;
