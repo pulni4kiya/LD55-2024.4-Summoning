@@ -1377,7 +1377,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 60
   m_TargetDisplay: 0
 --- !u!114 &673072814
 MonoBehaviour:
@@ -1512,8 +1512,8 @@ MonoBehaviour:
       Amount: 15
       Radius: 3
   - Spawns:
-    - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
-      Amount: 20
+    - Prefab: {fileID: 7351979691565385538, guid: da52002d9cbcd0846b2944a3c3954110, type: 3}
+      Amount: 5
       Radius: 2
   bossSpawnSet:
     Spawns:
@@ -1524,7 +1524,10 @@ MonoBehaviour:
       Amount: 5
       Radius: 2
     - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
-      Amount: 15
+      Amount: 10
+      Radius: 3
+    - Prefab: {fileID: 7351979691565385538, guid: da52002d9cbcd0846b2944a3c3954110, type: 3}
+      Amount: 3
       Radius: 3
 --- !u!4 &747402754
 Transform:
@@ -2453,7 +2456,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &1304990989
 RectTransform:
@@ -3353,6 +3356,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 532923424}
+    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.14150941
+      objectReference: {fileID: 0}
     - target: {fileID: 7811634185200707285, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
       propertyPath: m_Name
       value: Player

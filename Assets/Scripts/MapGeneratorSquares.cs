@@ -118,6 +118,7 @@ public class MapGeneratorSquares : MonoBehaviour {
 		for (int i = 1; i < orderedRooms.Count; i++) {
 			var randomIndex = UnityEngine.Random.Range(0, this.spawnerSets.Count);
 			AddSpawner(orderedRooms[i].Rect.center * this.cellSize, this.spawnerSets[randomIndex]);
+			//AddSpawner(orderedRooms[i].Rect.center * this.cellSize, this.bossSpawnSet);
 		}
 	}
 
