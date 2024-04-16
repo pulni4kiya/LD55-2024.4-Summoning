@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3951330992635115115}
   - component: {fileID: 1830693195029974099}
   - component: {fileID: 4890015703721483890}
+  - component: {fileID: 4225025840611084654}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -202,7 +203,7 @@ Transform:
   - {fileID: 1959803703217238534}
   - {fileID: 49924918671230232}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3951330992635115115
 MonoBehaviour:
@@ -226,6 +227,18 @@ MonoBehaviour:
   summonAction: {fileID: 9030981239578872051, guid: 9d970cb0f4acdb84b90b3c64e1f8c4dd, type: 3}
   rigidbody: {fileID: 1830693195029974099}
   playerAsMob: {fileID: 4890015703721483890}
+  soundPlayer: {fileID: 4225025840611084654}
+  damageSounds:
+  - {fileID: 8300000, guid: b98416b0f0005894b9f4dabc6c9d8b2e, type: 3}
+  - {fileID: 8300000, guid: d7c152e7c3127d54190d1a10f1fe39e4, type: 3}
+  - {fileID: 8300000, guid: f55a483348648cc418bf687357fc1081, type: 3}
+  - {fileID: 8300000, guid: e16af470be5aff64f9c5b00c894af57a, type: 3}
+  - {fileID: 8300000, guid: f85379e0f55d5074bbe17b221e6b1857, type: 3}
+  - {fileID: 8300000, guid: ecf76669f0f053740b2a4a67094aa537, type: 3}
+  - {fileID: 8300000, guid: 55c31952d3783c4489a4ca9f611c7e64, type: 3}
+  - {fileID: 8300000, guid: 815811eed2e12d848a1a10b052918593, type: 3}
+  - {fileID: 8300000, guid: 5e681afff73816647bb39f03977c7fc4, type: 3}
+  - {fileID: 8300000, guid: d375ff97b4a058d47be514c0985934ab, type: 3}
 --- !u!50 &1830693195029974099
 Rigidbody2D:
   serializedVersion: 4
@@ -276,6 +289,104 @@ MonoBehaviour:
   detectionCollider: {fileID: 8951164527049919322}
   visualRoot: {fileID: 322148865597068617}
   animator: {fileID: 2346608308878552619}
+  soundPlayer: {fileID: 0}
+  spawnSounds: []
+--- !u!82 &4225025840611084654
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811634185200707285}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8585253029175357445
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +431,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -345,7 +456,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

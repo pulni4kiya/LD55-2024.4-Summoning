@@ -10,6 +10,8 @@ public class Mob : MonoBehaviour {
 	[SerializeField] private CircleCollider2D detectionCollider;
 	[SerializeField] private Transform visualRoot;
 	[SerializeField] private Animator animator;
+	[SerializeField] private AudioSource soundPlayer;
+	[SerializeField] private List<AudioClip> spawnSounds;
 
 	public MobGroup MobGroup { get; set; }
 
@@ -25,6 +27,11 @@ public class Mob : MonoBehaviour {
 
 		if (this.stats.Lifetime > 0f) {
 			GameObject.Destroy(this.gameObject, this.stats.Lifetime);
+		}
+
+		if (this.spawnSounds.Count > 0) {
+			//this.soundPlayer.PlayOneShot(this.spawnSounds[GameManager.Instance.VoicePack]);
+			this.soundPlayer.PlayOneShot(this.spawnSounds[UnityEngine.Random.Range(0, this.spawnSounds.Count)]);
 		}
 	}
 

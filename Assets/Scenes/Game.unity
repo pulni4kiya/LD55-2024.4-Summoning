@@ -3356,18 +3356,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 532923424}
-    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.14150941
-      objectReference: {fileID: 0}
-    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.14150941
-      objectReference: {fileID: 0}
-    - target: {fileID: 5370962651823732895, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.14150941
-      objectReference: {fileID: 0}
     - target: {fileID: 7811634185200707285, guid: 8f9ebef4a09ba494cacafb3516e2b478, type: 3}
       propertyPath: m_Name
       value: Player

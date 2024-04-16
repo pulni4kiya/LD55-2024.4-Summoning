@@ -19,10 +19,12 @@ public class GameManager : MonoBehaviour
 
 	public State GameState { get; private set; }
 	public Mob ActiveCharger { get; set; }
+	public int VoicePack { get; private set; }
 
 	private void Awake() {
 		Instance = this;
 		Time.timeScale = 1f;
+		this.VoicePack = UnityEngine.Random.Range(0, 4);
 	}
 
 	private void OnDestroy() {

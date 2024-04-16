@@ -18,6 +18,8 @@ public class Player : MonoBehaviour {
 	[SerializeField] private InputActionReference summonAction;
 	[SerializeField] private Rigidbody2D rigidbody;
 	[SerializeField] private Mob playerAsMob;
+	[SerializeField] private AudioSource soundPlayer;
+	[SerializeField] private List<AudioClip> damageSounds;
 
 	public Mob MobToSummon { get; set; }
 
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour {
 	private float mana;
 
 	private bool hasDied;
+	private float lastHealth;
 
 	private void Start() {
 		this.mobGroup = new MobGroup();
@@ -69,6 +72,11 @@ public class Player : MonoBehaviour {
 			Debug.Log("YOU DIEDED!");
 			GameManager.Instance.GameLost();
 		}
+
+		if (this.playerAsMob.CurrentHealth < this.lastHealth) {
+			this.soundPlayer.PlayOneShot(this.damageSounds[UnityEngine.Random.Range(0, this.damageSounds.Count)]);
+		}
+		this.lastHealth = this.playerAsMob.CurrentHealth;
 	}
 
 	private void UpdateMana() {
