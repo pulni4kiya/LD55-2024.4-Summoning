@@ -1513,8 +1513,26 @@ MonoBehaviour:
       Radius: 3
   - Spawns:
     - Prefab: {fileID: 7351979691565385538, guid: da52002d9cbcd0846b2944a3c3954110, type: 3}
-      Amount: 5
+      Amount: 4
       Radius: 2
+    - Prefab: {fileID: 7109508017541159103, guid: ebf090990f196a24fafff4b788881a89, type: 3}
+      Amount: 6
+      Radius: 3
+  - Spawns:
+    - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
+      Amount: 25
+      Radius: 3
+  - Spawns:
+    - Prefab: {fileID: 7351979691565385538, guid: da52002d9cbcd0846b2944a3c3954110, type: 3}
+      Amount: 4
+      Radius: 3
+    - Prefab: {fileID: 7109508017541159103, guid: baae9d89e5b39bd4caf87f39f698b008, type: 3}
+      Amount: 10
+      Radius: 3
+  - Spawns:
+    - Prefab: {fileID: 7351979691565385538, guid: da52002d9cbcd0846b2944a3c3954110, type: 3}
+      Amount: 9
+      Radius: 3
   bossSpawnSet:
     Spawns:
     - Prefab: {fileID: 7109508017541159103, guid: 90218d5e282d3c84a99ccba6f61d11b8, type: 3}
